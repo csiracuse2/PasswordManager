@@ -13,10 +13,10 @@
             <Font name="Monospaced Regular" size="40.0" />
          </font>
       </Label>
-      <ListView fx:id="serviceListView" layoutY="49.0" prefHeight="250.0" prefWidth="600.0" />
-      <Button fx:id="changeButton" layoutY="324.0" mnemonicParsing="false" text="Change Password" />
-      <Button fx:id="deleteButton" layoutY="374.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Delete Service" />
-      <Button fx:id="viewButton" layoutY="299.0" mnemonicParsing="false" onAction="#switchToPasswordScene" prefHeight="25.0" prefWidth="110.0" text="View Password" />
-      <Button fx:id="addButton" layoutY="349.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="110.0" text="Add Password" />
+      <ListView fx:id="serviceListView" layoutY="49.0" prefHeight="288.0" prefWidth="600.0" />
+      <Button fx:id="changeButton" layoutY="369.0" mnemonicParsing="false" onAction="#switchToPasswordChangeScene" text="Change Password" />
+      <Button fx:id="deleteButton" layoutX="110.0" layoutY="369.0" mnemonicParsing="false" onAction="#deleteService" prefHeight="25.0" prefWidth="110.0" text="Delete Service" />
+      <Button fx:id="viewButton" layoutY="344.0" mnemonicParsing="false" onAction="#switchToPasswordViewScene" prefHeight="25.0" prefWidth="110.0" text="View Password" />
+      <Button fx:id="addButton" layoutX="110.0" layoutY="344.0" mnemonicParsing="false" onAction="#switchToServiceAddScene" prefHeight="25.0" prefWidth="110.0" text="Add Service" />
    </children>
 </AnchorPane>

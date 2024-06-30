@@ -3,7 +3,7 @@ package application;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class PasswordSceneController {
+public class PasswordViewSceneController extends Controller {
 	
 	@FXML
 	private Label passwordLabel;

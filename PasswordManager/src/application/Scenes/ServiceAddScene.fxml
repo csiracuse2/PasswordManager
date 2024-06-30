@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ServiceAddSceneController">
+   <children>
+      <Label fx:id="passwordLabel" alignment="CENTER" layoutX="1.0" layoutY="-1.0" prefHeight="49.0" prefWidth="600.0" textFill="RED">
+         <font>
+            <Font name="Monospaced Regular" size="40.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="1.0" layoutY="350.0" mnemonicParsing="false" onAction="#returnHome" prefHeight="49.0" prefWidth="110.0" text="Back" />
+      <Label layoutX="67.0" layoutY="67.0" prefHeight="29.0" prefWidth="64.0" text="Service Name">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="67.0" layoutY="142.0" prefHeight="29.0" prefWidth="64.0" text="Password">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Label>
+      <TextField fx:id="serviceNameTextField" layoutX="67.0" layoutY="96.0" prefHeight="29.0" prefWidth="456.0" />
+      <TextField fx:id="passwordTextField" layoutX="67.0" layoutY="171.0" prefHeight="29.0" prefWidth="456.0" />
+      <Button fx:id="saveButton" layoutX="67.0" layoutY="242.0" mnemonicParsing="false" onAction="#addService" prefHeight="29.0" prefWidth="456.0" text="Save" />
+   </children>
+</AnchorPane>

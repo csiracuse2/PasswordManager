@@ -19,6 +19,7 @@ public class DatabaseDataLoader {
 		Connection conn;
 		PreparedStatement ps;
 		ResultSet rs;
+		
 		try {
 			conn = ConnectionFactory.getConnection();
 			
@@ -41,18 +42,24 @@ public class DatabaseDataLoader {
 			throw new RuntimeException();
 		}
 	}
-
-	public static String getEncryptedPassword(String service) {
+	
+	/**
+	 * Gets the encrypted password of a particular service
+	 * @param service
+	 * @return
+	 */
+	public static String getEncryptedPassword(String serviceName) {
 		
 		Connection conn;
 		PreparedStatement ps;
 		ResultSet rs;
+		
 		try {
 			conn = ConnectionFactory.getConnection();
 			
 			String query = "SELECT encryptedPassword FROM Service where serviceName = ?";
 			ps = conn.prepareStatement(query);
-			ps.setString(1, service);
+			ps.setString(1, serviceName);
 			rs = ps.executeQuery();
 			
 			if(!rs.next()) {
@@ -70,6 +77,44 @@ public class DatabaseDataLoader {
 		} catch (SQLException e) {
 			throw new RuntimeException();
 		} catch (IllegalArgumentException e) {
+			throw new RuntimeException();
+		}
+	}
+	
+	/**
+	 * Loads the service with the given name
+	 * @return
+	 */
+	public static Service getServiceByName(String name) {
+		
+		Connection conn;
+		PreparedStatement ps;
+		ResultSet rs;
+		Service service;
+		
+		try {
+			conn = ConnectionFactory.getConnection();
+			
+			String query = "SELECT serviceName, encryptedPassword FROM Service where serviceName = ?";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			
+			if(rs.next()) {
+				String encryptedPassword = rs.getString("encryptedPassword");
+				service = new Service(name, encryptedPassword);
+			} else {
+				throw new IllegalStateException();
+			}
+			
+			rs.close();
+			ps.close();
+			ConnectionFactory.close(conn);
+			
+			return service;
+		} catch (SQLException e) {
+			throw new RuntimeException();
+		} catch (IllegalStateException e) {
 			throw new RuntimeException();
 		}
 	}

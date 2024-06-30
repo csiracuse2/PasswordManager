@@ -9,8 +9,8 @@ public class Service {
 		this.name = name;
 		this.encryptedPassword = encryptedPassword;
 	}
-
-	public String getName() {
+	
+	public String toString() {
 		return name;
 	}
 }
