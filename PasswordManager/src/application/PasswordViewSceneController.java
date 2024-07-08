@@ -8,8 +8,7 @@ public class PasswordViewSceneController extends Controller {
 	@FXML
 	private Label passwordLabel;
 	
-	//TODO: Change this to display the unencrypted password
-	public void displayPassword(String password) {
-		passwordLabel.setText(password);
+	public void displayPassword(String encryptedPassword) {
+		passwordLabel.setText(Cipher.decrypt(encryptedPassword));
 	}
 }

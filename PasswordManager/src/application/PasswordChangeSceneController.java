@@ -20,8 +20,7 @@ public class PasswordChangeSceneController extends Controller {
 		this.service = service;
 	}
 	
-	//TODO: Make this so that the password is encrypted before persisting to database
 	public void changePassword(ActionEvent event) {
-		DatabaseDataPersister.updatePassword(service, newPasswordTextField.getText());
+		DatabaseDataPersister.updatePassword(service,  Cipher.encrypt(newPasswordTextField.getText()));
 	}
 }

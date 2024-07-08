@@ -5,6 +5,7 @@ module PasswordManager {
 	requires org.apache.logging.log4j;
 	requires javafx.base;
 	requires javafx.graphics;
+	requires jasypt;
 	
 	opens application to javafx.graphics, javafx.fxml;
 }

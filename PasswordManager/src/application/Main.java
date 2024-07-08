@@ -14,9 +14,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Parent root = FXMLLoader.load(getClass().getResource("Scenes/DashboardScene.fxml"));
-			Scene scene = new Scene(root);
+			Scene scene = new Scene(root, Double.MAX_VALUE, Double.MAX_VALUE);
 			
 			Stage stage = new Stage();
+			
 			stage.setScene(scene);
 			stage.show();
 

@@ -30,9 +30,9 @@ public class ServiceAddSceneController extends Controller{
 	public void addService(ActionEvent event) {
 		String serviceName = serviceNameTextField.getText();
 		String password = passwordTextField.getText();
-		//TODO: Encrypt the password before passing through this function
+		
 		if(!serviceName.isBlank() && !password.isBlank()) {
-			DatabaseDataPersister.addService(serviceName, password);
+			DatabaseDataPersister.addService(serviceName, Cipher.encrypt(password));
 		} else {
 			this.event.handle(null);
 		}
